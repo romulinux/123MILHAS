@@ -19,8 +19,8 @@ paths:
           description: Sucesso.
           schema:
             $ref: "#/definitions/Flights"
-  /user:
-    put:
+  /flights/group:
+    get:
       description: Retorna uma lista de flights vindas da api de testes da 123Milhas, agrupadas e ordenadas por tarifa e preço.
       responses:
         "200":

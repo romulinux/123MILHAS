@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Response;
 use GuzzleHttp\Client as Client;
 use stdClass;
 
@@ -33,7 +34,8 @@ class FlightsController extends Controller
             $response = $this->agroup($flights); // realiza o agrupamento das flights
         }
 
-        return $response;
+        return response()->json($response, 200);
+
     }
 
     /**
