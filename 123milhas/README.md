@@ -1,24 +1,20 @@
-# Lumen PHP Framework
+# Teste da 123Milhas feito em Lumen PHP Framework
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://img.shields.io/packagist/dt/laravel/framework)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://img.shields.io/packagist/v/laravel/framework)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://img.shields.io/packagist/l/laravel/framework)](https://packagist.org/packages/laravel/lumen-framework)
+A escolha do Lumem foi feita por ser um framework mais simples, facilmente aplicável a APIs.
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+## Requisitos
 
-## Official Documentation
+PHP v7.3 ou superior
 
-Documentation for the framework can be found on the [Lumen website](https://lumen.laravel.com/docs).
+COMPOSER v2.0 ou superior
 
-## Contributing
+## Aplicação
 
-Thank you for considering contributing to Lumen! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Para executar a aplicação basta executar o comando `composer install` na raiz do projeto e instanciar o servidor localmente com o comando `php -S localhost:8000 -t public`.
 
-## Security Vulnerabilities
+## Rotas
 
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+Foram criadas 2 rotas: flights/list e flights/groups. A url base é `http://localhost:8000`.
 
-## License
-
-The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### ***_GET_ /flights/list*** - Retorna um json com uma lista de flights obtidos na [api de testes](http://prova.123milhas.net/api/flights) da 123Milhas.
+### ***_GET_ /flights/groups*** - Retorna um json com uma lista de flights agrupadas.

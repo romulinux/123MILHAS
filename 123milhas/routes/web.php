@@ -13,10 +13,6 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
-});
-
 $router->group(['prefix' => 'flights'], function () use ($router) {
     $router->get('list', 'FlightsController@list');
     $router->get('groups', 'FlightsController@groups');

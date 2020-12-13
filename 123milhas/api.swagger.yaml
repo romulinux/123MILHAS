@@ -1,0 +1,115 @@
+swagger: "2.0"
+info:
+  description: "Especificação da API do Desafio."
+  version: "1.0.0"
+  title: "Desafio 123Milhas"
+  contact:
+    email: "mneves.romulo@gmail.com"
+host: "localhost:8080"
+basePath: "/"
+schemes:
+- "https"
+- "http"
+paths:
+  /flights/list:
+    get:
+      description: Retorna uma lista de flights vindas da api de testes da 123Milhas.
+      responses:
+        "200":
+          description: Sucesso.
+          schema:
+            $ref: "#/definitions/Flights"
+  /user:
+    put:
+      description: Retorna uma lista de flights vindas da api de testes da 123Milhas, agrupadas e ordenadas por tarifa e preço.
+      responses:
+        "200":
+          description: Sucesso.
+          schema:
+            $ref: "#/definitions/Set"
+
+definitions:
+  Flight:
+    type: object
+    properties:
+      id:
+        type: integer
+      cia:
+        type: string
+      fare:
+        type: string
+      flightNumber:
+        type: string
+      origin:
+        type: string
+      destination:
+        type: string
+      departureDate:
+        type: string
+      arrivalDate:
+        type: string
+      departureTime:
+        type: string
+      arrivalTime:
+        type: string
+      classService:
+        type: integer
+      price:
+        type: integer
+      tax:
+        type: integer
+      inbound:
+        type: integer
+        minimum: 0
+        maximum: 1
+      outbound:
+        type: integer
+        minimum: 0
+        maximum: 1
+      duration:
+        type: string
+
+  Flights:
+    type: array
+    items:
+      $ref: "#/definitions/Flight"
+
+  Group:
+    type: object
+    properties:
+      uniqueId:
+        type: string
+      totalPrice:
+        type: integer
+        minimum: 0
+      inbound:
+        type: array
+        items:
+          $ref: "#/definitions/Flight"
+      outbound:
+        type: array
+        items:
+          $ref: "#/definitions/Flight"
+
+  Set:
+    type: object
+    properties:
+      flights:
+        type: array
+        items:
+          $ref: "#/definitions/Flight"
+      groups:
+        type: array
+        items:
+          $ref: "#/definitions/Group"
+      totalGroups:
+        type: integer
+        minimum: 0
+      totalFlights:
+        type: integer
+        minimum: 0
+      cheapestPrice:
+        type: integer
+        minimum: 0
+      cheapestGroup:
+        type: string
